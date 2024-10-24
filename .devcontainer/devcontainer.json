@@ -1,0 +1,47 @@
+{
+    "name": "dot-devcontainer-python-3.12",
+    "image": "ghcr.io/bearfield/python:3.12",
+    "remoteUser": "kumano_ryo",
+    "mounts": [
+        "source=${localEnv:HOME}/devcontainer_conf/.gitconfig_linux,target=/home/kumano_ryo/.gitconfig,type=bind,consistency=cached",
+    ],
+    "remoteEnv": {
+        "PYENV_ROOT": "/home/kumano_ryo/.pyenv",
+        "PATH": "${containerEnv:PYENV_ROOT}/bin:${containerEnv:PATH}"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "fish": {
+                        "path": "fish"
+                    }
+                },
+                "terminal.integrated.fontFamily": "Hack Nerd Font Mono,Source Code Pro for Powerline",
+                "workbench.colorCustomizations": {
+                    "statusBar.background": "#003195",
+                    "statusBar.foreground": "#FFFFFF"
+                },
+                "python.linting.pylintEnabled": false,
+                "python.linting.flake8Enabled": true,
+                "python.linting.lintOnSave": true,
+                "python.formatting.provider": "autopep8",
+                "editor.formatOnSave" : true
+            },
+            "extensions": [
+                "wayou.vscode-todo-highlight",
+                "redhat.vscode-yaml",
+                "timonwong.shellcheck",
+                "foxundermoon.shell-format",
+                "github.copilot",
+                "bmalehorn.vscode-fish",
+                "ms-vscode.makefile-tools",
+                "oderwat.indent-rainbow",
+                "ms-python.python",
+                "kevinrose.vsc-python-indent",
+                "ms-python.flake8",
+                "ms-python.black-formatter"
+            ]
+        }
+    }
+}
