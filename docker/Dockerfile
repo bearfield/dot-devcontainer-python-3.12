@@ -1,4 +1,6 @@
-FROM ghcr.io/bearfield/debian-fish:bookworm
+ARG BASE_IMAGE_TAG=bookworm
+
+FROM ghcr.io/bearfield/debian-fish:${BASE_IMAGE_TAG}
 #
 # set argument
 ARG PYTHON_VERSION=3.12.7
@@ -53,4 +55,4 @@ RUN pip install pipenv
 #
 # set env
 ENV DEBIAN_FRONTEND=dialog
-LABEL org.opencontainers.image.source https://github.com/bearfield/dot-devcontainer-python-3.12
+LABEL org.opencontainers.image.source=https://github.com/bearfield/dot-devcontainer-python-3.12

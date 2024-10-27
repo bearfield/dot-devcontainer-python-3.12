@@ -1,10 +1,11 @@
+
+
 {
-    "name": "ghcr.io/bearfield/python:3.12",
-    "image": "ghcr.io/bearfield/python:3.12",
+    "name": "ghcr.io/bearfield/python:3.12-private",
+    "image": "ghcr.io/bearfield/python:3.12-private",
     "remoteUser": "kumano_ryo",
     "mounts": [
         "source=${localEnv:HOME}/.gitconfig,target=/home/kumano_ryo/.gitconfig,type=bind,consistency=cached",
-        "source=${localEnv:HOME}/.config/gcloud,target=/home/kumano_ryo/.config/gcloud,type=bind,consistency=cached",
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ],
     "remoteEnv": {

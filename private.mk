@@ -8,7 +8,7 @@ WORK_DIR=$(MAKEFILE_DIR)
 .PHONY:test.build
 test.build:
 	cd $(WORK_DIR)
-	docker buildx build --build-arg BASE_IMAGE_TAG=bookworm --tag=$(DOCKERHUB_REPONAME)/$(CONTAINER_NAME):$(TAG_NAME) ./docker
+	docker buildx build --build-arg BASE_IMAGE_TAG=bookworm-private --tag=$(DOCKERHUB_REPONAME)/$(CONTAINER_NAME):$(TAG_NAME) ./docker
 
 .PHONY:test.rmi
 test.rmi:
